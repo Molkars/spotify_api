@@ -37,10 +37,10 @@ dependencies:
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:spotify_api/api.dart';
 
 
-var api_instance = new DefaultApi();
+var api_instance = new SpotifyApi();
 var ids = ids_example; // String | A comma-separated list of IDs
 var market = market_example; // String | The market (an ISO 3166-1 alpha-2 country code)
 
