@@ -1,0 +1,431 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'playlist_simple.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+Serializer<PlaylistSimple> _$playlistSimpleSerializer =
+    new _$PlaylistSimpleSerializer();
+
+class _$PlaylistSimpleSerializer
+    implements StructuredSerializer<PlaylistSimple> {
+  @override
+  final Iterable<Type> types = const [PlaylistSimple, _$PlaylistSimple];
+  @override
+  final String wireName = 'PlaylistSimple';
+
+  @override
+  Iterable<Object> serialize(Serializers serializers, PlaylistSimple object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object>[];
+    Object value;
+    value = object.collaborative;
+    if (value != null) {
+      result
+        ..add('collaborative')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.externalUrls;
+    if (value != null) {
+      result
+        ..add('external_urls')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(BuiltMap,
+                const [const FullType(String), const FullType(String)])));
+    }
+    value = object.href;
+    if (value != null) {
+      result
+        ..add('href')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.images;
+    if (value != null) {
+      result
+        ..add('images')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(Image)])));
+    }
+    value = object.name;
+    if (value != null) {
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.owner;
+    if (value != null) {
+      result
+        ..add('owner')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(UserProfile)));
+    }
+    value = object.public;
+    if (value != null) {
+      result
+        ..add('public')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.snapshotId;
+    if (value != null) {
+      result
+        ..add('snapshot_id')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.tracks;
+    if (value != null) {
+      result
+        ..add('tracks')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(PlaylistSimpleTracks)));
+    }
+    value = object.type;
+    if (value != null) {
+      result
+        ..add('type')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.uri;
+    if (value != null) {
+      result
+        ..add('uri')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    return result;
+  }
+
+  @override
+  PlaylistSimple deserialize(
+      Serializers serializers, Iterable<Object> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new PlaylistSimpleBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object value = iterator.current;
+      switch (key) {
+        case 'collaborative':
+          result.collaborative = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'external_urls':
+          result.externalUrls.replace(serializers.deserialize(value,
+              specifiedType: const FullType(BuiltMap,
+                  const [const FullType(String), const FullType(String)])));
+          break;
+        case 'href':
+          result.href = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'images':
+          result.images.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(Image)]))
+              as BuiltList<Object>);
+          break;
+        case 'name':
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'owner':
+          result.owner.replace(serializers.deserialize(value,
+              specifiedType: const FullType(UserProfile)) as UserProfile);
+          break;
+        case 'public':
+          result.public = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'snapshot_id':
+          result.snapshotId = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'tracks':
+          result.tracks.replace(serializers.deserialize(value,
+                  specifiedType: const FullType(PlaylistSimpleTracks))
+              as PlaylistSimpleTracks);
+          break;
+        case 'type':
+          result.type = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'uri':
+          result.uri = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$PlaylistSimple extends PlaylistSimple {
+  @override
+  final bool collaborative;
+  @override
+  final BuiltMap<String, String> externalUrls;
+  @override
+  final String href;
+  @override
+  final String id;
+  @override
+  final BuiltList<Image> images;
+  @override
+  final String name;
+  @override
+  final UserProfile owner;
+  @override
+  final bool public;
+  @override
+  final String snapshotId;
+  @override
+  final PlaylistSimpleTracks tracks;
+  @override
+  final String type;
+  @override
+  final String uri;
+
+  factory _$PlaylistSimple([void Function(PlaylistSimpleBuilder) updates]) =>
+      (new PlaylistSimpleBuilder()..update(updates)).build();
+
+  _$PlaylistSimple._(
+      {this.collaborative,
+      this.externalUrls,
+      this.href,
+      this.id,
+      this.images,
+      this.name,
+      this.owner,
+      this.public,
+      this.snapshotId,
+      this.tracks,
+      this.type,
+      this.uri})
+      : super._();
+
+  @override
+  PlaylistSimple rebuild(void Function(PlaylistSimpleBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  PlaylistSimpleBuilder toBuilder() =>
+      new PlaylistSimpleBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is PlaylistSimple &&
+        collaborative == other.collaborative &&
+        externalUrls == other.externalUrls &&
+        href == other.href &&
+        id == other.id &&
+        images == other.images &&
+        name == other.name &&
+        owner == other.owner &&
+        public == other.public &&
+        snapshotId == other.snapshotId &&
+        tracks == other.tracks &&
+        type == other.type &&
+        uri == other.uri;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc(
+        $jc(
+            $jc(
+                $jc(
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc(
+                                    $jc(
+                                        $jc(
+                                            $jc($jc(0, collaborative.hashCode),
+                                                externalUrls.hashCode),
+                                            href.hashCode),
+                                        id.hashCode),
+                                    images.hashCode),
+                                name.hashCode),
+                            owner.hashCode),
+                        public.hashCode),
+                    snapshotId.hashCode),
+                tracks.hashCode),
+            type.hashCode),
+        uri.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('PlaylistSimple')
+          ..add('collaborative', collaborative)
+          ..add('externalUrls', externalUrls)
+          ..add('href', href)
+          ..add('id', id)
+          ..add('images', images)
+          ..add('name', name)
+          ..add('owner', owner)
+          ..add('public', public)
+          ..add('snapshotId', snapshotId)
+          ..add('tracks', tracks)
+          ..add('type', type)
+          ..add('uri', uri))
+        .toString();
+  }
+}
+
+class PlaylistSimpleBuilder
+    implements Builder<PlaylistSimple, PlaylistSimpleBuilder> {
+  _$PlaylistSimple _$v;
+
+  bool _collaborative;
+  bool get collaborative => _$this._collaborative;
+  set collaborative(bool collaborative) =>
+      _$this._collaborative = collaborative;
+
+  MapBuilder<String, String> _externalUrls;
+  MapBuilder<String, String> get externalUrls =>
+      _$this._externalUrls ??= new MapBuilder<String, String>();
+  set externalUrls(MapBuilder<String, String> externalUrls) =>
+      _$this._externalUrls = externalUrls;
+
+  String _href;
+  String get href => _$this._href;
+  set href(String href) => _$this._href = href;
+
+  String _id;
+  String get id => _$this._id;
+  set id(String id) => _$this._id = id;
+
+  ListBuilder<Image> _images;
+  ListBuilder<Image> get images => _$this._images ??= new ListBuilder<Image>();
+  set images(ListBuilder<Image> images) => _$this._images = images;
+
+  String _name;
+  String get name => _$this._name;
+  set name(String name) => _$this._name = name;
+
+  UserProfileBuilder _owner;
+  UserProfileBuilder get owner => _$this._owner ??= new UserProfileBuilder();
+  set owner(UserProfileBuilder owner) => _$this._owner = owner;
+
+  bool _public;
+  bool get public => _$this._public;
+  set public(bool public) => _$this._public = public;
+
+  String _snapshotId;
+  String get snapshotId => _$this._snapshotId;
+  set snapshotId(String snapshotId) => _$this._snapshotId = snapshotId;
+
+  PlaylistSimpleTracksBuilder _tracks;
+  PlaylistSimpleTracksBuilder get tracks =>
+      _$this._tracks ??= new PlaylistSimpleTracksBuilder();
+  set tracks(PlaylistSimpleTracksBuilder tracks) => _$this._tracks = tracks;
+
+  String _type;
+  String get type => _$this._type;
+  set type(String type) => _$this._type = type;
+
+  String _uri;
+  String get uri => _$this._uri;
+  set uri(String uri) => _$this._uri = uri;
+
+  PlaylistSimpleBuilder();
+
+  PlaylistSimpleBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _collaborative = $v.collaborative;
+      _externalUrls = $v.externalUrls?.toBuilder();
+      _href = $v.href;
+      _id = $v.id;
+      _images = $v.images?.toBuilder();
+      _name = $v.name;
+      _owner = $v.owner?.toBuilder();
+      _public = $v.public;
+      _snapshotId = $v.snapshotId;
+      _tracks = $v.tracks?.toBuilder();
+      _type = $v.type;
+      _uri = $v.uri;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(PlaylistSimple other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$PlaylistSimple;
+  }
+
+  @override
+  void update(void Function(PlaylistSimpleBuilder) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$PlaylistSimple build() {
+    _$PlaylistSimple _$result;
+    try {
+      _$result = _$v ??
+          new _$PlaylistSimple._(
+              collaborative: collaborative,
+              externalUrls: _externalUrls?.build(),
+              href: href,
+              id: id,
+              images: _images?.build(),
+              name: name,
+              owner: _owner?.build(),
+              public: public,
+              snapshotId: snapshotId,
+              tracks: _tracks?.build(),
+              type: type,
+              uri: uri);
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'externalUrls';
+        _externalUrls?.build();
+
+        _$failedField = 'images';
+        _images?.build();
+
+        _$failedField = 'owner';
+        _owner?.build();
+
+        _$failedField = 'tracks';
+        _tracks?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'PlaylistSimple', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new

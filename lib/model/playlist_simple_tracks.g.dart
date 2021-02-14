@@ -1,0 +1,158 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'playlist_simple_tracks.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+Serializer<PlaylistSimpleTracks> _$playlistSimpleTracksSerializer =
+    new _$PlaylistSimpleTracksSerializer();
+
+class _$PlaylistSimpleTracksSerializer
+    implements StructuredSerializer<PlaylistSimpleTracks> {
+  @override
+  final Iterable<Type> types = const [
+    PlaylistSimpleTracks,
+    _$PlaylistSimpleTracks
+  ];
+  @override
+  final String wireName = 'PlaylistSimpleTracks';
+
+  @override
+  Iterable<Object> serialize(
+      Serializers serializers, PlaylistSimpleTracks object,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = <Object>[];
+    Object value;
+    value = object.href;
+    if (value != null) {
+      result
+        ..add('href')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.total;
+    if (value != null) {
+      result
+        ..add('total')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
+    return result;
+  }
+
+  @override
+  PlaylistSimpleTracks deserialize(
+      Serializers serializers, Iterable<Object> serialized,
+      {FullType specifiedType = FullType.unspecified}) {
+    final result = new PlaylistSimpleTracksBuilder();
+
+    final iterator = serialized.iterator;
+    while (iterator.moveNext()) {
+      final key = iterator.current as String;
+      iterator.moveNext();
+      final Object value = iterator.current;
+      switch (key) {
+        case 'href':
+          result.href = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'total':
+          result.total = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
+      }
+    }
+
+    return result.build();
+  }
+}
+
+class _$PlaylistSimpleTracks extends PlaylistSimpleTracks {
+  @override
+  final String href;
+  @override
+  final int total;
+
+  factory _$PlaylistSimpleTracks(
+          [void Function(PlaylistSimpleTracksBuilder) updates]) =>
+      (new PlaylistSimpleTracksBuilder()..update(updates)).build();
+
+  _$PlaylistSimpleTracks._({this.href, this.total}) : super._();
+
+  @override
+  PlaylistSimpleTracks rebuild(
+          void Function(PlaylistSimpleTracksBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  PlaylistSimpleTracksBuilder toBuilder() =>
+      new PlaylistSimpleTracksBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is PlaylistSimpleTracks &&
+        href == other.href &&
+        total == other.total;
+  }
+
+  @override
+  int get hashCode {
+    return $jf($jc($jc(0, href.hashCode), total.hashCode));
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper('PlaylistSimpleTracks')
+          ..add('href', href)
+          ..add('total', total))
+        .toString();
+  }
+}
+
+class PlaylistSimpleTracksBuilder
+    implements Builder<PlaylistSimpleTracks, PlaylistSimpleTracksBuilder> {
+  _$PlaylistSimpleTracks _$v;
+
+  String _href;
+  String get href => _$this._href;
+  set href(String href) => _$this._href = href;
+
+  int _total;
+  int get total => _$this._total;
+  set total(int total) => _$this._total = total;
+
+  PlaylistSimpleTracksBuilder();
+
+  PlaylistSimpleTracksBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _href = $v.href;
+      _total = $v.total;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(PlaylistSimpleTracks other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$PlaylistSimpleTracks;
+  }
+
+  @override
+  void update(void Function(PlaylistSimpleTracksBuilder) updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  _$PlaylistSimpleTracks build() {
+    final _$result =
+        _$v ?? new _$PlaylistSimpleTracks._(href: href, total: total);
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
