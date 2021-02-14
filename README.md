@@ -153,7 +153,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: accessCode
-- **Authorization URL**: https://accounts.spotify.com/authorize?redirect_uri=http://10.0.2.2:8080
+- **Authorization URL**: https://accounts.spotify.com/authorize
 - **Scopes**: 
  - **playlist-modify-private**: 
  - **playlist-modify-public**: 
@@ -171,7 +171,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: implicit
-- **Authorization URL**: https://accounts.spotify.com/authorize?redirect_uri=http://10.0.2.2:8080
+- **Authorization URL**: https://accounts.spotify.com/authorize
 - **Scopes**: 
  - **playlist-modify-private**: 
  - **playlist-modify-public**: 
