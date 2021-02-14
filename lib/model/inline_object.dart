@@ -12,10 +12,6 @@ abstract class InlineObject implements Built<InlineObject, InlineObjectBuilder> 
   @BuiltValueField(wireName: r'public')
   bool get public;
 
-  @nullable
-  @BuiltValueField(wireName: r'description')
-  String get description;
-
   // Boilerplate code needed to wire-up generated code
   InlineObject._();
 

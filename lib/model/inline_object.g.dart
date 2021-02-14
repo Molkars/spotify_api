@@ -6,7 +6,8 @@ part of 'inline_object.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializer<InlineObject> _$inlineObjectSerializer = new _$InlineObjectSerializer();
+Serializer<InlineObject> _$inlineObjectSerializer =
+    new _$InlineObjectSerializer();
 
 class _$InlineObjectSerializer implements StructuredSerializer<InlineObject> {
   @override
@@ -21,15 +22,17 @@ class _$InlineObjectSerializer implements StructuredSerializer<InlineObject> {
     Object value;
     value = object.name;
     if (value != null) {
-      result..add('name')..add(serializers.serialize(value, specifiedType: const FullType(String)));
+      result
+        ..add('name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.public;
     if (value != null) {
-      result..add('public')..add(serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
-    value = object.description;
-    if (value != null) {
-      result..add('description')..add(serializers.serialize(value, specifiedType: const FullType(String)));
+      result
+        ..add('public')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
     }
     return result;
   }
@@ -46,13 +49,12 @@ class _$InlineObjectSerializer implements StructuredSerializer<InlineObject> {
       final Object value = iterator.current;
       switch (key) {
         case 'name':
-          result.name = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.name = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
           break;
         case 'public':
-          result.public = serializers.deserialize(value, specifiedType: const FullType(bool)) as bool;
-          break;
-        case 'description':
-          result.description = serializers.deserialize(value, specifiedType: const FullType(String)) as String;
+          result.public = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
           break;
       }
     }
@@ -66,16 +68,15 @@ class _$InlineObject extends InlineObject {
   final String name;
   @override
   final bool public;
-  @override
-  final String description;
 
   factory _$InlineObject([void Function(InlineObjectBuilder) updates]) =>
       (new InlineObjectBuilder()..update(updates)).build();
 
-  _$InlineObject._({this.name, this.public, this.description}) : super._();
+  _$InlineObject._({this.name, this.public}) : super._();
 
   @override
-  InlineObject rebuild(void Function(InlineObjectBuilder) updates) => (toBuilder()..update(updates)).build();
+  InlineObject rebuild(void Function(InlineObjectBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
 
   @override
   InlineObjectBuilder toBuilder() => new InlineObjectBuilder()..replace(this);
@@ -83,44 +84,36 @@ class _$InlineObject extends InlineObject {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InlineObject && name == other.name && public == other.public && description == other.description;
+    return other is InlineObject &&
+        name == other.name &&
+        public == other.public;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, name.hashCode), public.hashCode), description.hashCode));
+    return $jf($jc($jc(0, name.hashCode), public.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject')
           ..add('name', name)
-          ..add('public', public)
-          ..add('description', description))
+          ..add('public', public))
         .toString();
   }
 }
 
-class InlineObjectBuilder implements Builder<InlineObject, InlineObjectBuilder> {
+class InlineObjectBuilder
+    implements Builder<InlineObject, InlineObjectBuilder> {
   _$InlineObject _$v;
 
   String _name;
-
   String get name => _$this._name;
-
   set name(String name) => _$this._name = name;
 
   bool _public;
-
   bool get public => _$this._public;
-
   set public(bool public) => _$this._public = public;
-
-  String _description;
-
-  String get description => _$this._description;
-
-  set description(String description) => _$this._description = description;
 
   InlineObjectBuilder();
 
@@ -129,7 +122,6 @@ class InlineObjectBuilder implements Builder<InlineObject, InlineObjectBuilder> 
     if ($v != null) {
       _name = $v.name;
       _public = $v.public;
-      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -148,7 +140,7 @@ class InlineObjectBuilder implements Builder<InlineObject, InlineObjectBuilder> 
 
   @override
   _$InlineObject build() {
-    final _$result = _$v ?? new _$InlineObject._(name: name, public: public, description: description);
+    final _$result = _$v ?? new _$InlineObject._(name: name, public: public);
     replace(_$result);
     return _$result;
   }
