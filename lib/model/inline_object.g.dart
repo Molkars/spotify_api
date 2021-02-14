@@ -34,6 +34,13 @@ class _$InlineObjectSerializer implements StructuredSerializer<InlineObject> {
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.description;
+    if (value != null) {
+      result
+        ..add('description')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -56,6 +63,10 @@ class _$InlineObjectSerializer implements StructuredSerializer<InlineObject> {
           result.public = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool;
           break;
+        case 'description':
+          result.description = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
       }
     }
 
@@ -68,11 +79,13 @@ class _$InlineObject extends InlineObject {
   final String name;
   @override
   final bool public;
+  @override
+  final String description;
 
   factory _$InlineObject([void Function(InlineObjectBuilder) updates]) =>
       (new InlineObjectBuilder()..update(updates)).build();
 
-  _$InlineObject._({this.name, this.public}) : super._();
+  _$InlineObject._({this.name, this.public, this.description}) : super._();
 
   @override
   InlineObject rebuild(void Function(InlineObjectBuilder) updates) =>
@@ -86,19 +99,22 @@ class _$InlineObject extends InlineObject {
     if (identical(other, this)) return true;
     return other is InlineObject &&
         name == other.name &&
-        public == other.public;
+        public == other.public &&
+        description == other.description;
   }
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, name.hashCode), public.hashCode));
+    return $jf(
+        $jc($jc($jc(0, name.hashCode), public.hashCode), description.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('InlineObject')
           ..add('name', name)
-          ..add('public', public))
+          ..add('public', public)
+          ..add('description', description))
         .toString();
   }
 }
@@ -115,6 +131,10 @@ class InlineObjectBuilder
   bool get public => _$this._public;
   set public(bool public) => _$this._public = public;
 
+  String _description;
+  String get description => _$this._description;
+  set description(String description) => _$this._description = description;
+
   InlineObjectBuilder();
 
   InlineObjectBuilder get _$this {
@@ -122,6 +142,7 @@ class InlineObjectBuilder
     if ($v != null) {
       _name = $v.name;
       _public = $v.public;
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -140,7 +161,9 @@ class InlineObjectBuilder
 
   @override
   _$InlineObject build() {
-    final _$result = _$v ?? new _$InlineObject._(name: name, public: public);
+    final _$result = _$v ??
+        new _$InlineObject._(
+            name: name, public: public, description: description);
     replace(_$result);
     return _$result;
   }
