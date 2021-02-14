@@ -15,12 +15,12 @@ Dart 1.20.0 or later OR Flutter 0.0.20 or later
 ### Github
 If this Dart package is published to Github, please include the following in pubspec.yaml
 ```
-name: openapi
+name: spotify_api
 version: 1.0.0
-description: OpenAPI API client
+description: Spotify API client
 dependencies:
-  openapi:
-    git: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+  spotify_api:
+    git: https://github.com/Molkars/spotify_api.git
       version: 'any'
 ```
 
@@ -28,8 +28,8 @@ dependencies:
 To use the package in your local drive, please include the following in pubspec.yaml
 ```
 dependencies:
-  openapi:
-    path: /path/to/openapi
+  spotify_api:
+    path: /path/to/spotify_api
 ```
 
 ## Getting Started
