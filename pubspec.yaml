@@ -1,5 +1,5 @@
 name: spotify_api
-version: 1.0.0
+version: 1.0.1
 description: OpenAPI API client
 environment:
     sdk: ">=2.3.0 <3.0.0"
